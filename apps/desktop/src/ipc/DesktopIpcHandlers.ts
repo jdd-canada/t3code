@@ -37,6 +37,7 @@ import {
   getLocalEnvironmentBootstraps,
   getLocalEnvironmentBearerToken,
   getRelayTelemetryEnabled,
+  getHomeEnvironmentId,
   getSystemLocale,
   getWindowFullscreenState,
   openExternal,
@@ -148,6 +149,7 @@ export const installDesktopIpcHandlers = Effect.fn("desktop.ipc.installHandlers"
   yield* ipc.handle(pasteAsText);
   yield* ipc.handle(revealWindow);
   yield* ipc.handle(probeRemoteEditors);
+  yield* ipc.handle(getHomeEnvironmentId);
   yield* ipc.handle(getUpdateState);
   yield* ipc.handle(setUpdateChannel);
   yield* ipc.handle(downloadUpdate);
